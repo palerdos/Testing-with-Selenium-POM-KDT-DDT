@@ -2,7 +2,10 @@ package operation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Properties;
 
 public class UIOperation {
@@ -14,6 +17,15 @@ public class UIOperation {
 
     public void click(Properties properties,String objectName, String objectType) throws Exception {
         driver.findElement(this.getObject(properties, objectName, objectType)).click();
+    }
+
+    public String getURL() {
+        return driver.getCurrentUrl();
+    }
+
+    public void waitUntilClickable(Properties properties, String objectName, String objectType) throws Exception {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(this.getObject(properties, objectName, objectType)));
     }
 
     private By getObject(Properties properties, String objectName, String objectType) throws Exception {
