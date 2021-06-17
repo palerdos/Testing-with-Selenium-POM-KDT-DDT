@@ -28,6 +28,20 @@ public class UIOperation {
         wait.until(ExpectedConditions.elementToBeClickable(this.getObject(properties, objectName, objectType)));
     }
 
+    public void maximize() {driver.manage().window().maximize();}
+
+    public void get(Properties properties,String objectName) {
+        driver.get(properties.getProperty(objectName));
+    }
+
+    public void close() {
+        driver.close();
+    }
+
+    public void quit() {
+        driver.quit();
+    }
+
     private By getObject(Properties properties, String objectName, String objectType) throws Exception {
         if(objectType.equalsIgnoreCase("XPATH")){
 
@@ -46,9 +60,9 @@ public class UIOperation {
 
         }
         //Find by css
-        else if(objectType.equalsIgnoreCase("CSS")){
+        else if(objectType.equalsIgnoreCase("ID")){
 
-            return By.cssSelector(properties.getProperty(objectName));
+            return By.id(properties.getProperty(objectName));
 
         }
         //find by link
