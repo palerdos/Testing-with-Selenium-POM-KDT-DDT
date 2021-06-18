@@ -28,6 +28,14 @@ public class UIOperation {
         wait.until(ExpectedConditions.elementToBeClickable(this.getObject(properties, objectName, objectType)));
     }
 
+    public void sendKeys(Properties properties,String objectName, String objectType, String keysToSend) throws Exception {
+        driver.findElement(this.getObject(properties, objectName, objectType)).sendKeys(keysToSend);
+    }
+
+    public String getText(Properties properties,String objectName, String objectType) throws Exception {
+        return driver.findElement(this.getObject(properties, objectName, objectType)).getText();
+    }
+
     public void maximize() {driver.manage().window().maximize();}
 
     public void get(Properties properties,String objectName) {
@@ -59,7 +67,7 @@ public class UIOperation {
             return By.name(properties.getProperty(objectName));
 
         }
-        //Find by css
+        //Find by id
         else if(objectType.equalsIgnoreCase("ID")){
 
             return By.id(properties.getProperty(objectName));
