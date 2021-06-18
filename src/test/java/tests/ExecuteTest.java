@@ -55,4 +55,15 @@ public class ExecuteTest {
         uiOperation.click(allObjects, "showMessageBtn", "xpath");
         assertEquals(expected, uiOperation.getText(allObjects, "singleInputDisplay", "id"));
     }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/twoFieldData.csv", numLinesToSkip = 1)
+    void twoFieldsAndOutput(String aInput, String bInput, String expected) throws Exception {
+        uiOperation.click(allObjects, "inputMenuOption", "link");
+        uiOperation.click(allObjects, "simpleFormMenuOption", "link");
+        uiOperation.sendKeys(allObjects, "aInputField", "id", aInput);
+        uiOperation.sendKeys(allObjects, "bInputField", "id", bInput);
+        uiOperation.click(allObjects, "getTotalBtn", "xpath");
+        assertEquals(expected, uiOperation.getText(allObjects, "getTotalValue", "id"));
+    }
 }
