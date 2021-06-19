@@ -66,4 +66,12 @@ public class ExecuteTest {
         uiOperation.click(allObjects, "getTotalBtn", "xpath");
         assertEquals(expected, uiOperation.getText(allObjects, "getTotalValue", "id"));
     }
+
+    @Test
+    void singleCheckBox() throws Exception {
+        uiOperation.click(allObjects, "inputMenuOption", "link");
+        uiOperation.click(allObjects, "checkboxMenuOption", "link");
+        uiOperation.click(allObjects, "singleCheckbox", "id");
+        assertTrue(uiOperation.isSelected(allObjects, "singleCheckbox", "id"));
+    }
 }

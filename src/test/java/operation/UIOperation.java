@@ -36,6 +36,10 @@ public class UIOperation {
         return driver.findElement(this.getObject(properties, objectName, objectType)).getText();
     }
 
+    public boolean isSelected(Properties properties, String objectName, String objectType) throws Exception {
+        return driver.findElement(this.getObject(properties, objectName, objectType)).isSelected();
+    }
+
     public void maximize() {driver.manage().window().maximize();}
 
     public void get(Properties properties,String objectName) {
