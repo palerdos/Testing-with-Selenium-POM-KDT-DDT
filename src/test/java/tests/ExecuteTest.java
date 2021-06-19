@@ -74,4 +74,49 @@ public class ExecuteTest {
         uiOperation.click(allObjects, "singleCheckbox", "id");
         assertTrue(uiOperation.isSelected(allObjects, "singleCheckbox", "id"));
     }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/selectListData.csv", numLinesToSkip = 1)
+    void selectList(String input) throws Exception {
+        uiOperation.click(allObjects, "inputMenuOption", "link");
+        uiOperation.click(allObjects, "selectListMenuOption", "link");
+        uiOperation.click(allObjects, "selectList", "id");
+        assertTrue(selectListHelper(input));
+    }
+
+    boolean selectListHelper(String day) throws Exception {
+        boolean result = false;
+        switch (day) {
+            case "Sunday":
+                uiOperation.click(allObjects, "sunday", "xpath");
+                result = uiOperation.isSelected(allObjects, "sunday", "xpath");
+                break;
+            case "Monday":
+                uiOperation.click(allObjects, "monday", "xpath");
+                result = uiOperation.isSelected(allObjects, "monday", "xpath");
+                break;
+            case "Tuesday":
+                uiOperation.click(allObjects, "tuesday", "xpath");
+                result = uiOperation.isSelected(allObjects, "tuesday", "xpath");
+                break;
+            case "Wednesday":
+                uiOperation.click(allObjects, "wednesday", "xpath");
+                result = uiOperation.isSelected(allObjects, "wednesday", "xpath");
+                break;
+            case "Thursday":
+                uiOperation.click(allObjects, "thursday", "xpath");
+                result = uiOperation.isSelected(allObjects, "thursday", "xpath");
+                break;
+            case "Friday":
+                uiOperation.click(allObjects, "friday", "xpath");
+                result = uiOperation.isSelected(allObjects, "friday", "xpath");
+                break;
+            case "Saturday":
+                uiOperation.click(allObjects, "saturday", "xpath");
+                result = uiOperation.isSelected(allObjects, "saturday", "xpath");
+                break;
+        }
+        return result;
+    }
+
 }
