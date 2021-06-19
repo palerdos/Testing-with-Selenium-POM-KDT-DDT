@@ -15,8 +15,6 @@ public class SeleniumTestPage {
 
     By simpleFormMenu = By.linkText("Simple Form Demo");
 
-    By adCloseBtn = By.id("at-cv-lightbox-close");
-
     By checkboxMenu = By.linkText("Checkbox Demo");
 
     By selectDropdownListMenu = By.linkText("Select Dropdown List");
@@ -37,14 +35,5 @@ public class SeleniumTestPage {
 
     public String getURL() {
         return driver.getCurrentUrl();
-    }
-
-    public void clickAdCloseBtn() {
-        driver.findElement(adCloseBtn).click();
-    }
-
-    public void waitForAdClickable(WebDriver driver) {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(adCloseBtn));
     }
 }
