@@ -77,6 +77,12 @@ public class UIOperation {
             return By.id(properties.getProperty(objectName));
 
         }
+        //Find by css
+        else if(objectType.equalsIgnoreCase("CSS")){
+
+            return By.cssSelector(properties.getProperty(objectName));
+
+        }
         //find by link
         else if(objectType.equalsIgnoreCase("LINK")){
 

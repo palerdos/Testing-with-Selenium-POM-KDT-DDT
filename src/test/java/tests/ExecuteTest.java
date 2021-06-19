@@ -84,6 +84,38 @@ public class ExecuteTest {
         assertTrue(selectListHelper(input));
     }
 
+    @ParameterizedTest
+    @CsvFileSource(resources = "/radioButtonData.csv", numLinesToSkip = 1)
+    void groupRadioButtons(String sex, String age) throws Exception {
+        uiOperation.click(allObjects, "inputMenuOption", "link");
+        uiOperation.click(allObjects, "RadioButtonsMenuOption", "link");
+        String gender = "";
+        String ageGroup = "";
+        if (sex.equals("male")) {
+            uiOperation.click(allObjects, "maleRadioButton", "xpath");
+            gender = "Male";
+        } else if (sex.equals("female")) {
+            uiOperation.click(allObjects, "femaleRadioButton", "xpath");
+            gender = "Female";
+        }
+        switch (age) {
+            case "0to5":
+                uiOperation.click(allObjects, "0to5", "xpath");
+                ageGroup = "0 - 5";
+                break;
+            case "5to15":
+                uiOperation.click(allObjects, "5to15", "xpath");
+                ageGroup = "5 - 15";
+                break;
+            case "15to50":
+                uiOperation.click(allObjects, "15to50", "xpath");
+                ageGroup = "15 - 50";
+                break;
+        }
+        uiOperation.click(allObjects, "getValuesBtn", "xpath");
+        assertEquals("Sex : "+gender+"\nAge group: "+ageGroup+"", uiOperation.getText(allObjects, "radioResult", "css"));
+    }
+
     boolean selectListHelper(String day) throws Exception {
         boolean result = false;
         switch (day) {
