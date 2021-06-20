@@ -40,4 +40,15 @@ public class TestSeleniumSimpleForm {
         assertEquals(expected, objSimpleFormPage.getDisplayedMessage());
     }
 
+    @ParameterizedTest
+    @CsvFileSource(resources = "/twoFieldData.csv", numLinesToSkip = 1)
+    void twoFieldsAndOutput(String aInput, String bInput, String expected) throws Exception {
+        objTestPage.clickInputFormMenu();
+        objTestPage.clickSimpleFormMenu();
+        objSimpleFormPage.enterInputFieldAMessage(aInput);
+        objSimpleFormPage.enterInputFieldBMessage(bInput);
+        objSimpleFormPage.clickOnGetTotalBtn();
+        assertEquals(expected, objSimpleFormPage.getTwoInputFieldResult());
+    }
+
 }
