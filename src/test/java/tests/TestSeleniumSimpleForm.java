@@ -32,7 +32,7 @@ public class TestSeleniumSimpleForm {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/singleFieldData.csv", numLinesToSkip = 1)
-    void singleFieldAndButton(String input, String expected) throws Exception {
+    void singleFieldAndButton(String input, String expected) {
         objTestPage.clickInputFormMenu();
         objTestPage.clickSimpleFormMenu();
         objSimpleFormPage.enterInputMessage(input);
@@ -42,7 +42,7 @@ public class TestSeleniumSimpleForm {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/twoFieldData.csv", numLinesToSkip = 1)
-    void twoFieldsAndOutput(String aInput, String bInput, String expected) throws Exception {
+    void twoFieldsAndOutput(String aInput, String bInput, String expected) {
         objTestPage.clickInputFormMenu();
         objTestPage.clickSimpleFormMenu();
         objSimpleFormPage.enterInputFieldAMessage(aInput);

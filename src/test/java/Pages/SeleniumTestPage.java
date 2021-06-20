@@ -33,6 +33,10 @@ public class SeleniumTestPage {
         driver.findElement(simpleFormMenu).click();
     }
 
+    public void clickCheckboxMenu() {driver.findElement(checkboxMenu).click();}
+
+    public void clickSelectDropdownListMenu() {driver.findElement(selectDropdownListMenu).click();}
+
     public String getURL() {
         return driver.getCurrentUrl();
     }
