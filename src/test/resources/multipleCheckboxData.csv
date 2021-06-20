@@ -1,6 +1,6 @@
-input
-1,1,1,1
-1,1,1,0
-1,0,1,0
-1,0,0,1
-0,0,0,1
+single,first,second,third,fourth,expected
+1,1,1,1,1,Uncheck All
+0,1,1,1,1,Uncheck All
+1,1,1,0,1,Check All
+0,0,1,1,1,Check All
+0,0,0,1,0,Check All
