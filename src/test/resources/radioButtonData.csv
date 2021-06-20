@@ -1,7 +1,7 @@
-sex,age
-male,0to5
-male,5to15
-male,15to50
-female,0to5
-female,5to15
-female,15to50
+sex,age,expected
+male,0to5,Sex : Male\nAge group: 0 - 5
+male,5to15,Sex : Male\nAge group: 5 - 15
+male,15to50,Sex : Male\nAge group: 15 - 50
+female,0to5,Sex : Female\n Age group: 0 - 5
+female,5to15,Sex : Female\nAge group: 5 - 15
+female,15to50,Sex : Female\nAge group: 15 - 50

@@ -19,7 +19,7 @@ public class SeleniumTestPage {
 
     By selectDropdownListMenu = By.linkText("Select Dropdown List");
 
-    WebDriverWait wait;
+    By radioButtonMenu = By.linkText("Radio Buttons Demo");
 
     public SeleniumTestPage(WebDriver driver) {
         this.driver = driver;
@@ -36,6 +36,8 @@ public class SeleniumTestPage {
     public void clickCheckboxMenu() {driver.findElement(checkboxMenu).click();}
 
     public void clickSelectDropdownListMenu() {driver.findElement(selectDropdownListMenu).click();}
+
+    public void clickRadioButtonMenu() {driver.findElement(radioButtonMenu).click();}
 
     public String getURL() {
         return driver.getCurrentUrl();
