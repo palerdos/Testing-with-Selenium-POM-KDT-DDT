@@ -1,5 +1,5 @@
 # Testing the browser
-This project was created to learn how to build robust and maintainable automation solutions. The task was to create all test cases in with Selenium Webdriver and the implementation of POM, KDT and DDT
+This project was created to learn how to build robust and maintainable automation solutions. The task was to create all test cases with Selenium Webdriver and the implementation of POM, KDT and DDT
 
 ![title](seleniumtest.png)
 
