@@ -47,7 +47,6 @@ button. Validate the result.<br>
 ## Technical Information and requirements
 The tests were run using the following versions:
 ```text
-Project SDK: java 11 version 11.09
 Google Chrome: Version 91.0.4472.77 (64-bit)
 ChromeDriver: Version 91.0.4472.101
 ```
