@@ -12,12 +12,37 @@ Test cases were created for the following features in both POM and KDT
 - Select List
 - Radio Buttons
 
-## Running the test suite
+## Tasks
 
-You can run the tests from the terminal by navigating to the project directory and running the following command:  
-```commandline
-mvn clean test
-```
+First exercise - Navigation:<br>
+- Open the base url. Using the "Menu List" navigate to All Examples/Input Forms/Simpe Form Demo
+- Base url: https://www.seleniumeasy.com/test/
+- Extension: Create reusable navigation keyword (and reuse it :])
+
+Second exercise - Single field & Button:<br>
+- Navigate to Simpe Form Demo. In "Single Input Field" enter a message into the field and click "Show Message" button. Validate that the message appeared.
+- Extension: fill the field data-driven way, use a source file for it
+
+Third exercise - Two fields & Output:<br>
+- Navigate to Simpe Form Demo. In "Two Input Fields" enter value A and B and click the "Get Total" button. Validate that the answer is correct.
+- Does your test works even when you enter very large numbers?
+- Extension: use at least 5 rows from data source with expected results, make positive and negative tests (1, a, expected 1a - failing test)
+
+Fourth exercise - Checkbox:<br>
+- Navigate to Checkbox Demo. In "Single Checkbox Demo" check the checkbox and validate the message.
+- Bonus if you write a test for "Multiple Checkbox Demo" and find the bug which is present on the webpage.
+- Extension: create a data source with at least 5 rows, with input combinations for checkbox (something like 1,0,1,0 should tick the 2nd and 4th checkboxes), dont forget validations
+
+Fifth exercise - Select List:<br>
+- Navigate to Select Dropdown List. In "Select List Demo" select the current day from the dropdown and validate that it's selected.
+- Try out all the way you can select a day.
+- Extension: select each days after each other twice (14 in total), use keywords and data source obviously
+
+Sixth exercise - Radio Buttons:<br>
+- Navigate to Radio buttons Demo. In "Group Radio Buttons Demo" select a combination and click the "Get values" 
+button. Validate the result.<br>
+- Try to run several combinations in one test.<br>
+- Extension: create and validate all possible combinations once, use data source and keywords<br>
 
 ## Technical Information and requirements
 The tests were run using the following versions:
